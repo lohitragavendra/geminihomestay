@@ -6,6 +6,7 @@ const modalCaption = document.querySelector('[data-modal-caption]');
 const modalClose = document.querySelector('[data-modal-close]');
 const galleryButtons = document.querySelectorAll('[data-gallery-filter]');
 const galleryItems = document.querySelectorAll('[data-gallery-item]');
+const galleryFilterItems = document.querySelectorAll('.gallery-item[data-category]');
 const contactForm = document.querySelector('[data-contact-form]');
 const statusBox = document.querySelector('[data-form-status]');
 const slider = document.querySelector('[data-slider]');
@@ -130,7 +131,7 @@ function closeModal() {
   modal.setAttribute('aria-hidden', 'true');
 }
 
-galleryItems.forEach((item) => {
+galleryFilterItems.forEach((item) => {
   item.addEventListener('click', () => openModal(item.dataset.fullImage || '', item.dataset.caption || 'Gallery image'));
 });
 
